@@ -1,8 +1,9 @@
 /*
  * File:   BotEventChecker.c
  * Author: Gabriel Hugh Elkaim
+ * Modified by: Aleida Diaz-Roque
  *
- * Template file to set up typical EventCheckers for the  Events and Services
+ * File to set up typical EventCheckers for the  Events and Services
  * Framework (ES_Framework) on the Uno32 for the CMPE-118/L class. Note that
  * this file will need to be modified to fit your exact needs, and most of the
  * names will have to be changed to match your code.
@@ -122,7 +123,8 @@ uint8_t CheckBattery(void) {
  * @return TRUE or FALSE
  * @brief This function is an event checker that checks the status of the tape sensors. 
  *        Returns TRUE if there was an event, FALSE otherwise.
- * @author Aleida Diaz-Roque adiazroq*/
+ * @author Aleida Diaz-Roque adiazroq
+ */
 uint8_t CheckTape(void) {
     static ES_EventTyp_t lastEvent = TAPE_NOT_SENSED;
     ES_EventTyp_t curEvent;
@@ -153,6 +155,14 @@ uint8_t CheckTape(void) {
     return (returnVal);
 }
 
+/**
+ * @Function CheckWall(void)
+ * @param none
+ * @return TRUE or FALSE
+ * @brief This function is an event checker that checks the status of the bumpers. 
+ *        Returns TRUE if there was an event, FALSE otherwise.
+ * @author Aleida Diaz-Roque adiazroq
+ */
 uint8_t CheckWall(void) {
     static ES_EventTyp_t lastWall = WALL_NOT_FOUND;
     ES_EventTyp_t curWall;
@@ -179,6 +189,14 @@ uint8_t CheckWall(void) {
     return (returnVal);
 }
 
+/**
+ * @Function CheckOtherWall(void)
+ * @param none
+ * @return TRUE or FALSE
+ * @brief This function is an event checker that checks the status of second bump sensor. 
+ *        Returns TRUE if there was an event, FALSE otherwise.
+ * @author Aleida Diaz-Roque adiazroq
+ */
 uint8_t CheckOtherWall(void) {
     static ES_EventTyp_t lastWall = OTHER_WALL_NOT_FOUND;
     ES_EventTyp_t curWall;
@@ -205,35 +223,6 @@ uint8_t CheckOtherWall(void) {
     return (returnVal);
 }
 
-//uint8_t CheckBump(void) {
-//    static ES_EventTyp_t lastEvent = NO_BUMP;
-//    ES_EventTyp_t curEvent;
-//    ES_Event thisEvent;
-//    uint8_t returnVal = FALSE;
-//    uint16_t bumpValue = botReadBumpers(); // read the tape sensors
-//    if(bumpValue == 0x0){
-//        curEvent = NO_BUMP;
-//    }
-//    else{
-//        curEvent = BUMPER_CHANGED;
-//    }
-//
-//    if (bumpValue != lastBump | curEvent != lastEvent) { // check for change from last time
-//        thisEvent.EventType = BUMPER_CHANGED;
-//        thisEvent.EventParam = bumpValue;
-//        returnVal = TRUE;
-//        lastEvent = curEvent;
-//#ifndef EVENTCHECKER_TEST           // keep this as is for test harness
-//        //PostTemplateService(thisEvent);
-//        PostTopHSM(thisEvent);
-//#else
-//        SaveEvent(thisEvent);
-//#endif   
-//    }
-//    lastBump = bumpValue;
-//    return (returnVal);
-//}
-
 
 /* 
  * The Test Harness for the event checkers is conditionally compiled using
@@ -256,6 +245,7 @@ uint8_t CheckOtherWall(void) {
  * defined in the project, no changes are necessary for your event checkers to work
  * with your other projects.
  */
+
 #ifdef EVENTCHECKER_TEST
 #include <stdio.h>
 static uint8_t(*EventList[])(void) = {EVENT_CHECK_LIST};
