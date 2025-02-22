@@ -1,7 +1,7 @@
 /*
  * File: TemplateService.h
  * Author: J. Edward Carryer
- * Modified: Gabriel H Elkaim
+ * Modified: Gabriel H Elkaim, Aleida Diaz-Roque
  *
  * Template file to set up a simple service to work with the Events and Services
  * Framework (ES_Framework) on the Uno32 for the CMPE-118/L class. Note that this file
@@ -14,8 +14,8 @@
  * Updated on 13/Nov/2013
  */
 
-#ifndef BotService_H  // <- This should be changed to your own guard on both
-#define BotService_H  //    of these lines
+#ifndef BotService_H  
+#define BotService_H  
 
 
 /*******************************************************************************
@@ -48,7 +48,9 @@
  *        queue, which will be handled inside RunTemplateService function. Remember
  *        to rename this to something appropriate.
  *        Returns TRUE if successful, FALSE otherwise
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author J. Edward Carryer, 2011.10.23 19:25 
+ * Modified by Aleida Diaz-Roque
+ */
 uint8_t InitBotService(uint8_t Priority);
 
 /**
@@ -59,7 +61,9 @@ uint8_t InitBotService(uint8_t Priority);
  *        will be used inside ES_Configure to point to which queue events should
  *        be posted to. Remember to rename to something appropriate.
  *        Returns TRUE if successful, FALSE otherwise
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author J. Edward Carryer, 2011.10.23 19:25 
+ * Modified by Aleida Diaz-Roque
+ */
 uint8_t PostBotService(ES_Event ThisEvent);
 
 /**
@@ -70,7 +74,9 @@ uint8_t PostBotService(ES_Event ThisEvent);
  *        as this is called any time a new event is passed to the event queue. 
  * @note Remember to rename to something appropriate.
  *       Returns ES_NO_EVENT if the event have been "consumed." 
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author J. Edward Carryer, 2011.10.23 19:25 
+ * Modified by Aleida Diaz-Roque
+ */
 ES_Event RunBotService(ES_Event ThisEvent);
 
 
