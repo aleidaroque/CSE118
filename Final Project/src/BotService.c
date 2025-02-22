@@ -1,7 +1,7 @@
 /*
  * File: TemplateService.h
  * Author: J. Edward Carryer
- * Modified: Gabriel H Elkaim
+ * Modified: Gabriel H Elkaim, Aleida Diaz-Roque
  *
  * Template file to set up a simple service to work with the Events and Services
  * Framework (ES_Framework) on the Uno32 for the CMPE-118/L class. Note that this file
@@ -65,20 +65,15 @@ uint8_t trackWireParam = 0;
  *        queue, which will be handled inside RunTemplateService function. Remember
  *        to rename this to something appropriate.
  *        Returns TRUE if successful, FALSE otherwise
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author J. Edward Carryer, 2011.10.23 19:25 
+ * Modified: Aleida Diaz-Roque, Spring 2024
+ */
 uint8_t InitBotService(uint8_t Priority) {
     ES_Event ThisEvent;
 
     MyPriority = Priority;
-
-    // in here you write your initialization code
-    // this includes all hardware and software initialization
-    // that needs to occur.
     sensors_Init();
-    // post the initial transition event
     ThisEvent.EventType = ES_INIT;
-
-    sensors_Init();
 
     ES_Timer_InitTimer(BEACON_CHECK_TIMER, BEACON_TIMER_TICKS);
 
@@ -110,20 +105,19 @@ uint8_t PostBotService(ES_Event ThisEvent) {
  *        as this is called any time a new event is passed to the event queue. 
  * @note Remember to rename to something appropriate.
  *       Returns ES_NO_EVENT if the event have been "consumed." 
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author J. Edward Carryer, 2011.10.23 19:25 
+ * Modified by Aleida Diaz-Roque, Spring 2024
+ */
+
 ES_Event RunBotService(ES_Event ThisEvent) {
     ES_Event ReturnEvent;
     ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
-
-    /********************************************
-     in here you write your service code
-     *******************************************/
+   
     // BEACON
     static ES_EventTyp_t lastBeaconEvent = BEACON_NOT_FOUND;
     ES_EventTyp_t curBeaconEvent;
     int beaconStatus = beaconVal(); // read the battery voltage
     
-
     // BUMPER
     static ES_EventTyp_t lastBumperEvent = BUMPER_CHANGED;
     ES_EventTyp_t curBumperEvent;
@@ -150,7 +144,6 @@ ES_Event RunBotService(ES_Event ThisEvent) {
         case ES_INIT:
             // No hardware initialization or single time setups, those
             // go in the init function above.
-            //
             // This section is used to reset service for some reason
             break;
 
@@ -228,7 +221,6 @@ ES_Event RunBotService(ES_Event ThisEvent) {
             }
 
             // POSTING ---------------------------------------------------------
-
             // Posting Beacon
             if (curBeaconEvent != lastBeaconEvent) { // check for change from last time
                 ReturnEvent.EventType = curBeaconEvent;
