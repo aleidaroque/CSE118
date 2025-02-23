@@ -27,9 +27,8 @@ Project 1 focuses on signal conditioning and filtering techniques using operatio
 📦 ECE118_Project1
  ┣ 📜 README.md      # Lab documentation
  ┣ 📂 schematics   # Circuit diagrams in PDF format
- ┣ 📂 code         # MATLAB scripts for filter design (if applicable)
- ┣ 📂 reports       # Lab report in PDF format
- ┗ 📂 datasheets   # Datasheets for key components
+ ┣ 📂 src         # MATLAB scripts for filter design (if applicable)
+ ┗ 📂 docs      # Lab report in PDF format
 ```
 ## 🚀 Lab Sections
 
