@@ -1,20 +1,15 @@
 /*
  * File: TemplateSubHSM.c
  * Author: J. Edward Carryer
- * Modified: Gabriel H Elkaim
+ * Modified: Gabriel H Elkaim, Aleida Diaz-Roque
  *
- * Template file to set up a Heirarchical State Machine to work with the Events and
- * Services Framework (ES_Framework) on the Uno32 for the CMPE-118/L class. Note that
- * this file will need to be modified to fit your exact needs, and most of the names
- * will have to be changed to match your code.
- *
- * There is for a substate machine. Make sure it has a unique name
- *
- * This is provided as an example and a good place to start.
+ * File to set up a Heirarchical State Machine to work with the Events and
+ * Services Framework (ES_Framework) on the Uno32 for the CMPE-118/L class. 
  *
  * History
  * When           Who     What/Why
  * -------------- ---     --------
+ * 05/15/24 10:00 adr	   modified code for CSE 118 Spring 2024 project	
  * 09/13/13 15:17 ghe      added tattletail functionality and recursive calls
  * 01/15/12 11:12 jec      revisions for Gen2 framework
  * 11/07/11 11:26 jec      made the queue static
@@ -119,15 +114,13 @@ static int fromWall;
  ******************************************************************************/
 
 /**
- * @Function InitTemplateSubHSM(uint8_t Priority)
- * @param Priority - internal variable to track which event queue to use
+ * @Function InitCollection1SubHSM(void)
  * @return TRUE or FALSE
  * @brief This will get called by the framework at the beginning of the code
  *        execution. It will post an ES_INIT event to the appropriate event
- *        queue, which will be handled inside RunCollection1FSM function. Remember
- *        to rename this to something appropriate.
+ *        queue, which will be handled inside RunCollection1SubFSM function.
  *        Returns TRUE if successful, FALSE otherwise
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author Aleida Diaz-Roque */
 uint8_t InitCollection1SubHSM(void) {
     ES_Event returnEvent;
 
@@ -140,7 +133,7 @@ uint8_t InitCollection1SubHSM(void) {
 }
 
 /**
- * @Function RunTemplateSubHSM(ES_Event ThisEvent)
+ * @Function RunCollection1SubHSM(ES_Event ThisEvent)
  * @param ThisEvent - the event (type and param) to be responded.
  * @return Event - return event (type and param), in general should be ES_NO_EVENT
  * @brief This function is where you implement the whole of the heirarchical state
@@ -148,12 +141,10 @@ uint8_t InitCollection1SubHSM(void) {
  *        queue. This function will be called recursively to implement the correct
  *        order for a state transition to be: exit current state -> enter next state
  *        using the ES_EXIT and ES_ENTRY events.
- * @note Remember to rename to something appropriate.
- *       The lower level state machines are run first, to see if the event is dealt
+ * @note The lower level state machines are run first, to see if the event is dealt
  *       with there rather than at the current level. ES_EXIT and ES_ENTRY events are
  *       not consumed as these need to pass pack to the higher level state machine.
- * @author J. Edward Carryer, 2011.10.23 19:25
- * @author Gabriel H Elkaim, 2011.10.23 19:25 */
+ * @author Aleida Diaz-Roque */
 ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
     uint8_t makeTransition = FALSE; // use to flag transition
     Collection1SubHSMState_t nextState; // <- change type to correct enum
@@ -167,7 +158,7 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                 // this is where you would put any actions associated with the
                 // transition from the initial pseudo-state into the actual
                 // initial state
-
+		    
                 // now put the machine into the actual initial state
                 collisionFrom = START;
                 spinDirection = START;
@@ -490,6 +481,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case WallAdjust:
             switch (ThisEvent.EventType) {
@@ -549,7 +542,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
-
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case Turn90Right:
             switch (ThisEvent.EventType) {
@@ -581,6 +575,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case OtherWallFollow:
             switch (ThisEvent.EventType) {
@@ -657,6 +653,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case OtherWallAdjust:
             switch (ThisEvent.EventType) {
@@ -714,6 +712,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
 
         case DriveForward:
@@ -785,6 +785,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case AdjustingRight: // in the first state, replace this with correct names
             printf("\r\nCollection2: In Adjusting Right");
@@ -872,6 +874,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case AdjustingLeft: // in the first state, replace this with correct names
             printf("\r\nCollection2: In Adjusting Right");
@@ -957,6 +961,8 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
                     break;
             }
             break;
+	    ///////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
         case AlignReverse:
 
@@ -1030,11 +1036,6 @@ ES_Event RunCollection1SubHSM(ES_Event ThisEvent) {
             break;
 
     }
-
-
-    //        default: // all unhandled states fall into here
-    //            break;
-
 
     // end switch on Current State
 
