@@ -1,0 +1,3 @@
+﻿"GMaterial" = 0.21in
+"MDF"= 0.21in
+"Foamcore"= 0.2in
