@@ -1,4 +1,4 @@
-# ECE 118 Project 1: Signal Conditioning and Filtering
+# Project 1: Signal Conditioning and Filtering
 
 **ECE118 - Introduction to Mechatronics**  
 **University of California, Santa Cruz**  
