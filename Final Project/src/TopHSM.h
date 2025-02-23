@@ -1,24 +1,21 @@
 /*
- * File: TemplateHSM.h
+ * File: TopHSM.h
  * Author: J. Edward Carryer
  * Modified: Gabriel H Elkaim
+ * Author of Current Version: Aleida Diaz-Roque
  *
- * Template file to set up a Heirarchical State Machine to work with the Events and
+ * File to set up a Heirarchical State Machine to work with the Events and
  * Services Framework (ES_Framework) on the Uno32 for the CMPE-118/L class. Note that 
  * this file will need to be modified to fit your exact needs, and most of the names
  * will have to be changed to match your code.
  *
- * There is another template file for the SubHSM's that is slightly differet, and
- * should be used for all of the subordinate state machines (flat or heirarchical)
- *
- * This is provided as an example and a good place to start.
  *
  * Created on 23/Oct/2011
  * Updated on 16/Sep/2013
  */
 
-#ifndef HSM_TOP_H  // <- This should be changed to your own guard on both
-#define HSM_TOP_H  //    of these lines
+#ifndef HSM_TOP_H  
+#define HSM_TOP_H  
 
 
 /*******************************************************************************
@@ -90,7 +87,7 @@
  ******************************************************************************/
 
 /**
- * @Function InitTemplateHSM(uint8_t Priority)
+ * @Function InitTopHSM(uint8_t Priority)
  * @param Priority - internal variable to track which event queue to use
  * @return TRUE or FALSE
  * @brief This will get called by the framework at the beginning of the code
@@ -98,26 +95,26 @@
  *        queue, which will be handled inside RunTemplateFSM function. Remember
  *        to rename this to something appropriate.
  *        Returns TRUE if successful, FALSE otherwise
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author Aleida Diaz-Roque */
 uint8_t InitTopHSM(uint8_t Priority);
 
 
 /**
- * @Function PostTemplateHSM(ES_Event ThisEvent)
+ * @Function PostTopHSM(ES_Event ThisEvent)
  * @param ThisEvent - the event (type and param) to be posted to queue
  * @return TRUE or FALSE
  * @brief This function is a wrapper to the queue posting function, and its name
  *        will be used inside ES_Configure to point to which queue events should
  *        be posted to. Remember to rename to something appropriate.
  *        Returns TRUE if successful, FALSE otherwise
- * @author J. Edward Carryer, 2011.10.23 19:25 */
+ * @author Aleida Diaz-Roque */
 uint8_t PostTopHSM(ES_Event ThisEvent);
 
 
 
 
 /**
- * @Function RunTemplateHSM(ES_Event ThisEvent)
+ * @Function RunTopHSM(ES_Event ThisEvent)
  * @param ThisEvent - the event (type and param) to be responded.
  * @return Event - return event (type and param), in general should be ES_NO_EVENT
  * @brief This function is where you implement the whole of the heirarchical state
@@ -130,7 +127,8 @@ uint8_t PostTopHSM(ES_Event ThisEvent);
  *       with there rather than at the current level. ES_EXIT and ES_ENTRY events are
  *       not consumed as these need to pass pack to the higher level state machine.
  * @author J. Edward Carryer, 2011.10.23 19:25
- * @author Gabriel H Elkaim, 2011.10.23 19:25 */
+ * @author Gabriel H Elkaim, 2011.10.23 19:25 
+ * @author Aleida Diaz-Roque*/
 ES_Event RunTopHSM(ES_Event ThisEvent);
 
 #endif /* HSM_TOP_H */
