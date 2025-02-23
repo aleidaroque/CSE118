@@ -28,7 +28,6 @@ Lab 0 serves as an introduction to the ES_Framework, debugging tools, and hardwa
 📦 ECE118_Lab0
  ┣ 📜 README.md   # Lab documentation
  ┣ 📂 src         # Source code (FSM, event checkers, motor control)
- ┣ 📂 hardware    # Schematics and PCB soldering details
  ┗ 📂 docs        # Reports, diagrams, and references
 ```
 
