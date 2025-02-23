@@ -53,7 +53,8 @@ JAK-HD is an autonomous robot designed and built for the ECE118 final project. T
 - Achieved **37/40 ball collection** in successful trials.  
 - Competed in the **UCSC Mechatronics Tournament**, reaching the **semifinals**.  
 
-## 📸 Images & Diagrams  
+## 📸 Images
+
 <img width="400" alt="Competition during first round" src="https://github.com/user-attachments/assets/f69a20f5-ae45-4882-8d0f-2d9c8a6c8e0a" />
 
 <img width="400" alt="Competition, passing to semi-finals" src="https://github.com/user-attachments/assets/40e22f5f-b905-4c0c-b5df-0c3bd698eb97" />
@@ -61,8 +62,6 @@ JAK-HD is an autonomous robot designed and built for the ECE118 final project. T
 <img width="300" alt="Robot and Aleida" src="https://github.com/user-attachments/assets/3e2e7f4d-d3f6-4ec0-9d0a-ecb4c06a5751" />
 
 <img width="500" alt="Robot and Team" src="https://github.com/user-attachments/assets/80264bbf-a35a-468b-9ed4-0584ad987ea8" />
-
-
 
 
 ## 🛠 Team  
