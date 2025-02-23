@@ -26,7 +26,6 @@ Project 2 focuses on mechanical prototyping, and designing and building a robot 
 ```plaintext
 📦 ECE118_Lab2
  ┣ 📜 README.md   # Lab documentation
- ┣ 📂 src         # Source code for motor control & sensors
  ┣ 📂 cad         # SolidWorks files & laser cutting layouts
  ┣ 📂 hardware    # Schematics, PCB layouts, and perfboard design
  ┗ 📂 docs        # Reports, diagrams, and reference materials 
@@ -63,7 +62,11 @@ Project 2 focuses on mechanical prototyping, and designing and building a robot 
 - **Beacon Signal Detection:** Optimized filter bandwidth to enhance selectivity
 
 ## 📸 Media
-*(Include images of the gearbox, platform, and beacon detector if available.)*
+
+<img width="200" alt="Screenshot 2025-02-23 at 3 56 59 PM" src="https://github.com/user-attachments/assets/55c2bb95-1ec2-4f29-bcb4-db12a7621e3f" />
+
+<img width="350" alt="Front:Back of Soldered Beacon Detector" src="https://github.com/user-attachments/assets/cd703d30-556e-43ad-8460-ace8077419a7" />
+
 
 ## 🛠 Team
 - **Caden Grace Jacobs**
