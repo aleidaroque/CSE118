@@ -1,4 +1,4 @@
-# Lab 0: The Roach (FSMs & HSMs)
+# Project 0: The Roach (FSMs & HSMs)
 
 **ECE118 - Introduction to Mechatronics**  
 **University of California, Santa Cruz**  
@@ -6,7 +6,7 @@
 
 ## 📌 Overview
 
-Lab 0 serves as an introduction to the ES_Framework, debugging tools, and hardware components used in ECE118. The lab is divided into multiple sections, covering PCB assembly, basic programming, hardware exploration, and the implementation of finite and hierarchical state machines for the Roach robot.
+Project 0 serves as an introduction to the ES_Framework, debugging tools, and hardware components used in ECE118. The project is divided into multiple sections, covering PCB assembly, basic programming, hardware exploration, and the implementation of finite and hierarchical state machines for the Roach robot.
 
 ### 🔹 Objectives:
 - Learn **soldering techniques** by assembling a mini-beacon PCB
