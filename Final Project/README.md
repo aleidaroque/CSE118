@@ -55,7 +55,7 @@ JAK-HD is an autonomous robot designed and built for the ECE118 final project. T
 
 ## 📸 Images & Diagrams  
 
-![Competition During First Roung](Final Project/Competition during first round.png)
+![Competition During First Roung](/Final Project/Competition during first round.png)
 
 ## 🛠 Team  
 
