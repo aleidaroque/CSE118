@@ -1,6 +1,6 @@
 /*
- * File: TemplateSubHSM.c
- * Author: J. Edward Carryer
+ * File: Collection1SubHSM.c
+ * Author of Template: J. Edward Carryer
  * Modified: Gabriel H Elkaim, Aleida Diaz-Roque
  *
  * File to set up a Heirarchical State Machine to work with the Events and
