@@ -1,4 +1,4 @@
-# Lab 0: Signal Conditioning and Filtering
+# Lab 0: The Roach (FSMs & HSMs)
 
 **ECE118 - Introduction to Mechatronics**  
 **University of California, Santa Cruz**  
