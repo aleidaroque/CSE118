@@ -31,9 +31,7 @@ Project 3 explores the control and operation of various types of motors, includi
 📦 ECE118_Lab3
  ┣ 📜 README.md      # Lab documentation
  ┣ 📂 src           # Source code for motor control
- ┣ 📂 schematics   # Circuit diagrams in PDF format
- ┣ 📂 reports       # Lab report in PDF format
- ┗ 📂 datasheets   # Datasheets for key components
+ ┗  📂 docs       # Lab report in PDF format
 ```
 
 ## 🚀 Project Sections
